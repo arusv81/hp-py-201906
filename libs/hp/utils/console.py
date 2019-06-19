@@ -39,7 +39,3 @@ def read_bool(prompt,defaultValue=True):
     else:
         return defaultValue
 
-
-
-
-print('loading module {}'.format(__name__))

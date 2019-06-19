@@ -1,0 +1,1 @@
+print('conceptarchitect.calculations module loaded')

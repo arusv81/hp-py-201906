@@ -1,0 +1,27 @@
+import conceptarchitect.utils.console as cu
+import conceptarchitect.calculations.maths as maths
+from conceptarchitect.calculations.primes import prime_range
+
+def main():
+    repeat=True
+    while repeat:
+        lo=cu. read_int('min? ',2)
+        hi=cu. read_int('max?')
+       
+        primes=prime_range(lo,hi)
+
+        total=maths.sum(*primes) 
+        avg=maths.average(*primes)
+        smallest=min(*primes); 
+        print('primes={}'.format(primes))
+        print('total primes found is {}'.format(len(primes)))
+        print('sum of primes {}'.format(total))
+        print('average of primes {}'.format(avg))
+        print('smallest prime in series is {}'.format(smallest))
+        repeat=cu.read_bool('try again?',True)
+    
+
+
+main()
+
+

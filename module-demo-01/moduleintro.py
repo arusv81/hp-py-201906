@@ -13,11 +13,15 @@ def main():
     print(consoleutils)
     print(type(consoleutils))
     print(id(consoleutils))
-    print(help(consoleutils))
+    #print(help(consoleutils))
     
-    print(dir(consoleutils))
+    print('dir={}'.format(dir(consoleutils)))
 
     name=consoleutils.read_str('your name ?')
+    
+    # names from module is not directly accessible
+    #email=read_str('your email?')
+
     print('Hello {}, Welcome to Python!'.format(name))
 
 

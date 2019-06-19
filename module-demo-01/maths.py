@@ -12,11 +12,12 @@ def average(*args):
     return sum(*args)/len(args)
 
 def min(x,y):
-    return x if x>y else y
+    return x if x<y else y
+
+# if __name__=='__main__':
+#     print('executing main from maths module: {}'\
+#         .format(__name__))
+#     print('sum(1,2,3,4)={}'.format(sum(1,2,3,4)));
+#     print('average(1,2,3,4)={}'.format(average(1,2,3,4)));
 
 
-def main():
-    print(f'sum(1,2,3,4)={sum(1,2,3,4)}');
-    print(f'average(1,2,3,4)={average(1,2,3,4)}');
-
-#main()

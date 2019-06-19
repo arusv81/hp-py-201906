@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>11-Modules</title>
+<title>12-python-standard-modules</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13116,444 +13116,388 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Modules">Modules<a class="anchor-link" href="#Modules">&#182;</a></h1><ul>
-<li>Modules are the smallest distribution unit of a program</li>
-<li>A module single python script (<strong>.py file</strong>) is equivalent to a module</li>
-<li><p>A large module may consist of <strong>folder--&gt;sub folder--&gt;file</strong> hierarchy</p>
+<h1 id="Python-Standard-Modules">Python Standard Modules<a class="anchor-link" href="#Python-Standard-Modules">&#182;</a></h1><ul>
+<li>python installation comes with several predefined modules to organize the codes</li>
+<li><p>these modules are present in directory welknown to python runtime and we don't need to include them in <strong>PYTHONPATH</strong></p>
+</li>
+<li><p>these modules perform various different task</p>
+</li>
+</ul>
+<h3 id="Some-Important-standard-Modules">Some Important standard Modules<a class="anchor-link" href="#Some-Important-standard-Modules">&#182;</a></h3><ol>
+<li><p><strong>sys</strong></p>
 <ul>
-<li>each folder will also act as a module.</li>
+<li>contains functionality related to <strong>python system</strong></li>
 </ul>
 </li>
-<li><p>A module can contain one or more functions, classes, data</p>
-</li>
-<li><p>A module may be compared to</p>
+<li><p><strong>os</strong></p>
 <ul>
-<li>package of java</li>
-<li>namespaces of c++/c#</li>
-</ul>
-</li>
-<li><p>A module (unlike an package or namespace) is essnetially an <strong>object</strong></p>
-<ul>
-<li>It is a programming unit    </li>
-<li>the module object contains all the functions and other elements defined within the object</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>The simplest and smallest module is defined using a <strong>.py file</strong> <ul>
-<li>A module can't be created on a REPL/Shell (including jupyter)</li>
-<li>a repl is not a .py file</li>
+<li>contains functionality related to <strong>operating system</strong><ul>
+<li>example<ul>
+<li>starting a process</li>
+<li>checking the files in directory</li>
+<li>creating a directory</li>
+<li>listing a directory</li>
 </ul>
 </li>
 </ul>
-<ul>
-<li>A module can be accessed by<ul>
-<li>Another python module</li>
-<li>A python application</li>
-<li>A python shell or repl (including jupyter)</li>
-</ul>
 </li>
 </ul>
-<h2 id="1.-Creating-a-Module">1. Creating a Module<a class="anchor-link" href="#1.-Creating-a-Module">&#182;</a></h2><ul>
-<li><p>To create a module, we simply create a <strong>.py file</strong> and write our the functions there</p>
-<ul>
-<li>every <strong>.py file</strong> is essentially a module</li>
-</ul>
 </li>
-<li><p>A module typically will have the same name as that of the <strong>.py file</strong></p>
-</li>
-<li><p>A moudle in programming is used as a variable (reference) names</p>
-</li>
-</ul>
-<h3 id="Recommendation:">Recommendation:<a class="anchor-link" href="#Recommendation:">&#182;</a></h3><h4 id="Always-name-you-.py-file-in-such-a-way-that-it-can-be-used-as-variable-name">Always name you .py file in such a way that it can be used as variable name<a class="anchor-link" href="#Always-name-you-.py-file-in-such-a-way-that-it-can-be-used-as-variable-name">&#182;</a></h4><ul>
-<li>avoid file names starting with number</li>
-<li>avoid any special symbol (other than underscore)</li>
-<li>avoid blankspaces in the file name</li>
-</ul>
-<h2 id="2.-Using-a-Module">2. Using a Module<a class="anchor-link" href="#2.-Using-a-Module">&#182;</a></h2><ul>
-<li>to use a code from some module we first need to <strong>import</strong> it</li>
-<li><p>import can be considered as a loose equivalent of</p>
-<ul>
-<li>#include of c++</li>
-<li>unlike #include the source code is not copied</li>
-</ul>
-</li>
-<li><p>it is more closer to</p>
-<ul>
-<li>using of c++ and c#</li>
-<li>import of java</li>
-</ul>
-</li>
-</ul>
-<h3 id="2.1-forms-of-import">2.1 forms of import<a class="anchor-link" href="#2.1-forms-of-import">&#182;</a></h3><h4 id="2.1.1-import-module_name">2.1.1 import module_name<a class="anchor-link" href="#2.1.1-import-module_name">&#182;</a></h4><ul>
-<li>we can simply import a module by importing module name</li>
-<li>module name is same as the name of the script file</li>
-<li><strong>import create a module object.</strong><ul>
-<li>an object of class Module</li>
-</ul>
-</li>
-<li><p>This object can be used like any other object and we can access its</p>
-<ul>
-<li>type</li>
-<li>id</li>
-<li><strong>dir</strong> &lt;-- <em>content of the module</em></li>
-</ul>
-</li>
-<li><p>All the elements defined in <strong>.py</strong> file becomes part of this module object</p>
-</li>
-<li><p>It also contains special additional attributes such as</p>
-<ul>
-<li><strong>__name__</strong> &lt;-- <em>module name</em></li>
-<li><strong>__file__</strong> &lt;-- <em>module file path</em></li>
-</ul>
-</li>
-<li><p><strong>To access methods from module, we need to use module qualified name</strong></p>
-</li>
-</ul>
-<hr>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">consoleutils</span> <span class="c1"># this is a global named added</span>
-
-
-<span class="n">name</span><span class="o">=</span><span class="n">consoleutils</span><span class="o">.</span><span class="n">read_str</span><span class="p">(</span><span class="s1">&#39;enter your name?&#39;</span><span class="p">)</span> <span class="c1"># read_str is part of consoleutils</span>
-</pre></div>
-<hr>
-<h3 id="Advantage">Advantage<a class="anchor-link" href="#Advantage">&#182;</a></h3><ul>
-<li><p>Large application can be divided in more managable units which can be developed by different developer.</p>
-</li>
-<li><p>Global names are reduced (<strong>remember global names are problem</strong>)</p>
-</li>
-<li><p>We just get one global names ---&gt; module name</p>
-</li>
-<li><p>All other methods becomes part of this module.</p>
-</li>
-</ul>
-<h3 id="Problems">Problems<a class="anchor-link" href="#Problems">&#182;</a></h3><ul>
-<li>A module name is still a name like any other</li>
-<li>It is a global name </li>
-<li>A carless program may overwrite this name</li>
-<li>Since the name is same as .py file we don't have a control on its name</li>
-</ul>
-<h4 id="2.1.2-import-module_name-as-alias">2.1.2 import module_name as alias<a class="anchor-link" href="#2.1.2-import-module_name-as-alias">&#182;</a></h4><ul>
-<li>python allows you to import a module with an alias</li>
-</ul>
-<hr>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">primes</span> <span class="kn">as</span> <span class="nn">p</span>
-</pre></div>
-<hr>
-<ul>
-<li>This line is conceptually equivalent to </li>
-</ul>
-<hr>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">primes</span> 
-<span class="c1">#now assign primes to another reference p</span>
-<span class="n">p</span><span class="o">=</span><span class="n">primes</span>
-<span class="c1">#primes is actually not available in context</span>
-<span class="k">del</span> <span class="n">primes</span>
-</pre></div>
-<hr>
-<ul>
-<li>now we can access the module content using the alias</li>
-</ul>
-<hr>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">primes</span> <span class="kn">as</span> <span class="nn">p</span>
-
-<span class="c1">#p represents primes module</span>
-<span class="c1">#primes represent the return of prime_range() function</span>
-<span class="n">primes</span><span class="o">=</span><span class="n">p</span><span class="o">.</span><span class="n">prime_range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-</pre></div>
-<hr>
-<h4 id="Note:-The-modules-internal-name-is-still-primes.-Its-simply-accessible-using-reference-p">Note: The modules internal name is still primes. Its simply accessible using reference p<a class="anchor-link" href="#Note:-The-modules-internal-name-is-still-primes.-Its-simply-accessible-using-reference-p">&#182;</a></h4><h4 id="2.1.3-import-selective-names-from-a-module">2.1.3 import selective names from a module<a class="anchor-link" href="#2.1.3-import-selective-names-from-a-module">&#182;</a></h4><ul>
-<li>we can also import selective name(s) from a module rather than the module itself</li>
-</ul>
-<hr>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">consoleutils</span> <span class="kn">import</span> <span class="n">read_int</span><span class="p">,</span><span class="n">read_bool</span>
-
-<span class="n">number</span><span class="o">=</span><span class="n">read_int</span><span class="p">(</span><span class="s1">&#39;enter a number&#39;</span><span class="p">)</span> <span class="c1"># no consoleutils. required</span>
-
-<span class="c1">#cant use module name</span>
-
-<span class="n">choice</span><span class="o">=</span><span class="n">consoleutils</span><span class="o">.</span><span class="n">read_bool</span><span class="p">(</span><span class="s1">&#39;want to continue?&#39;</span><span class="p">)</span> <span class="c1"># this code will fail. there is no consoleutils reference</span>
-</pre></div>
-<hr>
-<ul>
-<li><p>when we import selective name, the module object is not added to the context</p>
-</li>
-<li><p>the selective names (read_int, read_bool) is directlya added to <strong>global context</strong></p>
-</li>
-<li><p>you can access these names without module name indirection (like any global function)</p>
-</li>
-<li><p>the module name itself is not available</p>
-</li>
-<li><p>other names from the module (eg. read_float or read_str) are not available or added to the context</p>
-</li>
-<li><p><strong>you get what you need</strong></p>
-</li>
-</ul>
-<h3 id="Recommendation">Recommendation<a class="anchor-link" href="#Recommendation">&#182;</a></h3><ul>
-<li>use selective import when<ul>
-<li>you have to import few names only (1-3)</li>
-<li>you know these names are what you need</li>
-<li>you are ready to resolve the conflict that may occur.</li>
-</ul>
-</li>
-</ul>
-<h4 id="2.1.3-import-*">2.1.3 import *<a class="anchor-link" href="#2.1.3-import-*">&#182;</a></h4><ul>
-<li>we can also use wildcard import</li>
-</ul>
-<hr>
-<div class="highlight"><pre><span></span><span class="n">form</span> <span class="n">math</span> <span class="kn">import</span> <span class="o">*</span>
-</pre></div>
-<hr>
-<ul>
-<li><p>math module is not added as a reference</p>
-</li>
-<li><p>all the names inside maths module is added to global context</p>
-</li>
-<li><p>no module reference required to access any of those elements</p>
-</li>
-</ul>
-<hr>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">maths</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="n">a</span><span class="o">=</span><span class="n">average</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># method defined in maths module</span>
-</pre></div>
-<hr>
-<h4 id="Recommendation-----NEVER-NEVER-USE-WILDCARD-IMPORT">Recommendation --- NEVER NEVER USE WILDCARD IMPORT<a class="anchor-link" href="#Recommendation-----NEVER-NEVER-USE-WILDCARD-IMPORT">&#182;</a></h4><ul>
-<li><p>you import everything --- what you need and what you dont need</p>
-</li>
-<li><p>you have no idea if the imported names conflict with exiting name</p>
-</li>
-</ul>
-<hr>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">maths</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="n">a</span><span class="o">=</span><span class="n">average</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># maths.average has no conflict yet!</span>
-
-<span class="n">s</span><span class="o">=</span><span class="nb">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># maths.sum overwrite builtin sum() function. But My sum function is good enough.</span>
-
-<span class="n">m</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># maths.min overwites builtin min(). my min takes only two parameter against a more verstile builtin. This code will fail!!!</span>
-</pre></div>
-<hr>
-<ul>
-<li><p>your module may not have any conflict today. But can you ensure there will be no conflict in future</p>
-</li>
-<li><p>you may add new functions to your module in a future release</p>
-</li>
-</ul>
-<h2 id="3.-Hierarchial-Module">3. Hierarchial Module<a class="anchor-link" href="#3.-Hierarchial-Module">&#182;</a></h2><ul>
-<li><p>For a complex application design we may need better module organziation</p>
-</li>
-<li><p>We may use folder and sub folder to define our module</p>
-</li>
-<li><p>each folder and sub folder becomes part of the module hirarchy</p>
-</li>
-</ul>
-<hr>
-<p><pre>
-[brand]
-  |------->[calculations]
-  |               |---------> primes.py  [ is_prime, prime_range]
-  |               |---------> maths.py   [ sum, average, min ]
-  |------->[stats]
-  |           |-------------> graphs.py  [histogram, line, pie ]
-  |           |-------------> formula.py [ freq, mean, median, permutaion ]
-  |                              
-  |------->[utils]
-  |           |-------------> console.py [read_str, read_int, read_float, read_bool]
-</pre></p>
-<hr>
-<ul>
-<li>now the folders are also considered modules</li>
-</ul>
-<h3 id="3.1-importing-a-hirarchial-module">3.1 importing a hirarchial module<a class="anchor-link" href="#3.1-importing-a-hirarchial-module">&#182;</a></h3><hr>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">brand.calculations.primes</span> <span class="kn">as</span> <span class="nn">p</span>
-<span class="kn">from</span> <span class="nn">brand.stats.graph</span> <span class="kn">import</span> <span class="n">histogram</span>
-<span class="kn">from</span> <span class="nn">brand.stats.formula</span> <span class="kn">import</span> <span class="n">freq</span>
-<span class="n">primes</span><span class="o">=</span><span class="n">p</span><span class="o">.</span><span class="n">prime_range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-
-<span class="n">f</span><span class="o">=</span><span class="n">freq</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
-
-<span class="n">hisogram</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-</pre></div>
-<hr>
-<h2 id="4.-How-is-a-Module-Located?">4. How is a Module Located?<a class="anchor-link" href="#4.-How-is-a-Module-Located?">&#182;</a></h2><ul>
-<li>How is a module (folder or file) located?</li>
-<li>By default <strong>Python runtime</strong> searches for the module in the current working folder.</li>
-<li>If a module is useful to more than one project (application) it makes sense to keep it on a shared location rather than keeping in the same folder as you main application.</li>
-</ul>
-<h3 id="Recommendation">Recommendation<a class="anchor-link" href="#Recommendation">&#182;</a></h3><ol>
-<li>create a folder for your project</li>
-<li>keep the main script in your project</li>
-<li>keep modules specific to current project in the same folder or subfolder (acting as module)</li>
-<li>keep the common shared utilites in a shared location from where all the projects can access them.</li>
 </ol>
-<h3 id="How-do-I-locate-modules-not-present-in-my-current-folder?">How do I locate modules not present in my current folder?<a class="anchor-link" href="#How-do-I-locate-modules-not-present-in-my-current-folder?">&#182;</a></h3><ul>
-<li><p>Python by default searches for a module in</p>
 <ol>
-<li>current working directory</li>
-<li><p>directory where the main script actually exist</p>
+<li><p><strong>threading</strong></p>
+<ul>
+<li>contains multi-threading api</li>
+</ul>
 </li>
-<li><p>directories where python installation has stored its own modules (already known to python)</p>
+<li><p><strong>json</strong></p>
+<ul>
+<li>handing json file</li>
+</ul>
+</li>
+<li><p><strong>csv</strong></p>
+<ul>
+<li>handling csv files</li>
+</ul>
 </li>
 </ol>
-</li>
-</ul>
+<ol>
+<li><p><strong>ftplib</strong></p>
 <ul>
-<li><p>We can specify additional <strong>directories</strong> where my modules may be located</p>
+<li>contains ftp protocol related api</li>
+</ul>
 </li>
-<li><p>wc can supply as list of paths (similar to systems <strong>PATH</strong> variable) called <strong>PYTHONPATH</strong></p>
-</li>
-<li><p>systems enviornmemnt variable <strong>PATH</strong> helps us locate an executable</p>
-</li>
-<li><p>A <strong>PYTHON</strong> path is a list of paths where a <strong>Python runtime</strong> searches for modules</p>
-</li>
-<li><p>Each path in this list should be separted by a path separator character as defined by the os</p>
+<li><p><strong>smtp</strong></p>
 <ul>
-<li>windows os uses <strong>semicolon</strong></li>
-<li>*nix / mac etc uses <strong>colon</strong></li>
+<li>contains smpt protocol related api</li>
 </ul>
 </li>
-<li><p>If multiple paths exists in <strong>PYTHONPATH</strong> variable they are searched in the given order</p>
-<ul>
-<li>search ends on the first matching path</li>
-<li>there is no best matching or full matching strategy</li>
-</ul>
+</ol>
+<h3 id="Even-More-Library-@-PyPI">Even More Library @ PyPI<a class="anchor-link" href="#Even-More-Library-@-PyPI">&#182;</a></h3><ul>
+<li><p>more library (including third party) exsits in <strong>python standard repository</strong></p>
+</li>
+<li><p>this repository is known as <strong>PY</strong>thon <strong>P</strong>ackage <strong>I</strong>ndex (<strong>PyPI</strong>)</p>
+</li>
+<li><p>python includes utility <strong>pip</strong> to download and install modules and other ptyhon utilities in your system.</p>
 </li>
 </ul>
-<h4 id="Note:-PYTHONPATH-sould-contain-the-folder-that-contains-your-module-and-not-the-module-itself.">Note: PYTHONPATH sould contain the folder that contains your module and not the module itself.<a class="anchor-link" href="#Note:-PYTHONPATH-sould-contain-the-folder-that-contains-your-module-and-not-the-module-itself.">&#182;</a></h4><h3 id="Python-Version-Alert!!!">Python Version Alert!!!<a class="anchor-link" href="#Python-Version-Alert!!!">&#182;</a></h3><ul>
-<li><p><strong>python2</strong> has an additional requirement for locating a <strong>module-folder</strong></p>
-<ul>
-<li><p>not every folder is a module in python</p>
-</li>
-<li><p>a folder becomes a module if it contains a special file <strong>__init__.py</strong></p>
-</li>
-</ul>
-</li>
-<li><p><strong>python3</strong> doesn't mandate that the file <strong>__init__.py</strong> must exist</p>
-<ul>
-<li>If this file is present, <strong>Python 3</strong> honors this file?</li>
-</ul>
-</li>
-</ul>
-<h3 id="__init__.py">__init__.py<a class="anchor-link" href="#__init__.py">&#182;</a></h3><ul>
-<li>Is a module identifier</li>
-<li>Needed only if a folder is treated as module</li>
-<li>each sub module folder must also contain this file</li>
-<li>this file is mostly a marker and may be completely empty</li>
-<li><p><strong>if there is any code present in this file</strong>, however, that <strong>code is executed first time</strong> the module is loaded</p>
-<ul>
-<li>the code is executed only once.</li>
-</ul>
-</li>
-<li><p>in <strong>python 2</strong> this file is mandatory</p>
-</li>
-<li><p>in <strong>python 3</strong> this file is option</p>
-<ul>
-<li><strong>if this file is present and contains some code, even python 3 will execute it</strong></li>
-</ul>
-</li>
-</ul>
-<h2 id="4.-global-code-in-a-module">4. global code in a module<a class="anchor-link" href="#4.-global-code-in-a-module">&#182;</a></h2><ul>
-<li><p>whenever a module is imported (in any of the 4 forms), the module script is executed</p>
-</li>
-<li><p>any <strong>global</strong> code in the module file will also execute.</p>
-<ul>
-<li>This will haven even for selective import</li>
-</ul>
-</li>
-<li><p>this execution is most often undesirable for the client application</p>
-</li>
-<li><p>we should avoid it</p>
-</li>
-</ul>
-<h3 id="4.1-Solution--1-:-Selective-execution-using-module.__name__-feature">4.1 Solution -1 : Selective execution using module.__name__ feature<a class="anchor-link" href="#4.1-Solution--1-:-Selective-execution-using-module.__name__-feature">&#182;</a></h3><ul>
-<li><p>every module object contains a <strong>__name__</strong> proeprty that has a value same as module name</p>
-</li>
-<li><p>a script that is directly executing using <strong>python runtime</strong> is always named <strong>__main__</strong></p>
-</li>
-<li><p>a script that is imported gets its real name</p>
-<ul>
-<li>real name is full module name including <strong>module.submodule</strong> </li>
-</ul>
-</li>
-<li><p>a module name is not same as alias</p>
-<ul>
-<li>alias is an external name used for accessing the code</li>
-<li>real name is still the module name</li>
-</ul>
-</li>
-</ul>
-<h4 id="Name-guard-strategy">Name guard strategy<a class="anchor-link" href="#Name-guard-strategy">&#182;</a></h4><ul>
-<li><p>generally a module may contain a test()/main() function that should execute only in direct mode</p>
-</li>
-<li><p>the same code shouldn't execute when the file is imported as module</p>
-</li>
-<li><p>change the below code</p>
-</li>
+<h3 id="1.-Most-Important-Python-Module----__builtins__">1. Most Important Python Module -- __builtins__<a class="anchor-link" href="#1.-Most-Important-Python-Module----__builtins__">&#182;</a></h3><ul>
+<li>python defines a module called <strong>__builtins__</strong></li>
+<li>this is the most important module present in python system</li>
+<li>it is so important and only module that it is automatically imported in all your scripts as follows</li>
 </ul>
 <hr>
-<div class="highlight"><pre><span></span><span class="c1">#maths.py</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;hello world from maths module&#39;</span><span class="p">)</span>
-
-<span class="c1"># global function call</span>
-<span class="n">main</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__builtins__</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 <hr>
 <ul>
-<li>to</li>
+<li>This module contains all the common langauge element and core library of python including<ul>
+<li>print, input, min, max</li>
+<li>list, tuple, dict, set</li>
+<li>True, False, None</li>
+<li>NameError, KeyError</li>
+<li>int, float, bool, str</li>
 </ul>
-<hr>
-<div class="highlight"><pre><span></span><span class="c1">#maths.py</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;hello world from maths module&#39;</span><span class="p">)</span>
-
-<span class="c1">#call only when this script is directly executed</span>
-<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
-</pre></div>
-<hr>
-<ul>
-<li>now the code will execute only when directly executed</li>
-</ul>
-<h3 id="Avoid">Avoid<a class="anchor-link" href="#Avoid">&#182;</a></h3><hr>
-<div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="c1"># i dont need min function</span>
-    <span class="c1"># but after I am called anyone who needs min() still dont have it</span>
-    <span class="nb">min</span><span class="o">=</span><span class="mi">20</span> <span class="c1"># overwrite global min() for everone</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;min value is {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">min</span><span class="p">)</span>
-
-
-<span class="o">***</span>
-</pre></div>
-<h3 id="Prefer">Prefer<a class="anchor-link" href="#Prefer">&#182;</a></h3><hr>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="c1">#I dont need min() function. I can use this name for whatever I want</span>
-    <span class="nb">min</span><span class="o">=</span><span class="mi">20</span> <span class="c1"># not overwriting global min() </span>
-
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;min value is {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">min</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
-<span class="o">***</span>
-</pre></div>
-<h3 id="4.2-Do-I-really-need-a-global-in-a-module?-[-P-R-E-F-E-R-R-E-D-]">4.2 Do I really need a global in a module? [ P R E F E R R E D ]<a class="anchor-link" href="#4.2-Do-I-really-need-a-global-in-a-module?-[-P-R-E-F-E-R-R-E-D-]">&#182;</a></h3><ul>
-<li><p>A module is meant to be a helper containing logic to be used by client script or other module</p>
-</li>
-<li><p>A module sometimes defines a <strong>test</strong> code for self test</p>
-</li>
-<li><p>But test is a separte responsibilty</p>
-</li>
-<li><p>Your module shouldn't be self testing (it may define the test logic but not call it)</p>
-</li>
-<li><p>The testing can be done by another script that  may import and test</p>
 </li>
 </ul>
+<h3 id="Let-us-inspect-__builtins__">Let us inspect __builtins__<a class="anchor-link" href="#Let-us-inspect-__builtins__">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">__builtins__</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[1]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;ArithmeticError&#39;,
+ &#39;AssertionError&#39;,
+ &#39;AttributeError&#39;,
+ &#39;BaseException&#39;,
+ &#39;BlockingIOError&#39;,
+ &#39;BrokenPipeError&#39;,
+ &#39;BufferError&#39;,
+ &#39;BytesWarning&#39;,
+ &#39;ChildProcessError&#39;,
+ &#39;ConnectionAbortedError&#39;,
+ &#39;ConnectionError&#39;,
+ &#39;ConnectionRefusedError&#39;,
+ &#39;ConnectionResetError&#39;,
+ &#39;DeprecationWarning&#39;,
+ &#39;EOFError&#39;,
+ &#39;Ellipsis&#39;,
+ &#39;EnvironmentError&#39;,
+ &#39;Exception&#39;,
+ &#39;False&#39;,
+ &#39;FileExistsError&#39;,
+ &#39;FileNotFoundError&#39;,
+ &#39;FloatingPointError&#39;,
+ &#39;FutureWarning&#39;,
+ &#39;GeneratorExit&#39;,
+ &#39;IOError&#39;,
+ &#39;ImportError&#39;,
+ &#39;ImportWarning&#39;,
+ &#39;IndentationError&#39;,
+ &#39;IndexError&#39;,
+ &#39;InterruptedError&#39;,
+ &#39;IsADirectoryError&#39;,
+ &#39;KeyError&#39;,
+ &#39;KeyboardInterrupt&#39;,
+ &#39;LookupError&#39;,
+ &#39;MemoryError&#39;,
+ &#39;ModuleNotFoundError&#39;,
+ &#39;NameError&#39;,
+ &#39;None&#39;,
+ &#39;NotADirectoryError&#39;,
+ &#39;NotImplemented&#39;,
+ &#39;NotImplementedError&#39;,
+ &#39;OSError&#39;,
+ &#39;OverflowError&#39;,
+ &#39;PendingDeprecationWarning&#39;,
+ &#39;PermissionError&#39;,
+ &#39;ProcessLookupError&#39;,
+ &#39;RecursionError&#39;,
+ &#39;ReferenceError&#39;,
+ &#39;ResourceWarning&#39;,
+ &#39;RuntimeError&#39;,
+ &#39;RuntimeWarning&#39;,
+ &#39;StopAsyncIteration&#39;,
+ &#39;StopIteration&#39;,
+ &#39;SyntaxError&#39;,
+ &#39;SyntaxWarning&#39;,
+ &#39;SystemError&#39;,
+ &#39;SystemExit&#39;,
+ &#39;TabError&#39;,
+ &#39;TimeoutError&#39;,
+ &#39;True&#39;,
+ &#39;TypeError&#39;,
+ &#39;UnboundLocalError&#39;,
+ &#39;UnicodeDecodeError&#39;,
+ &#39;UnicodeEncodeError&#39;,
+ &#39;UnicodeError&#39;,
+ &#39;UnicodeTranslateError&#39;,
+ &#39;UnicodeWarning&#39;,
+ &#39;UserWarning&#39;,
+ &#39;ValueError&#39;,
+ &#39;Warning&#39;,
+ &#39;WindowsError&#39;,
+ &#39;ZeroDivisionError&#39;,
+ &#39;__IPYTHON__&#39;,
+ &#39;__build_class__&#39;,
+ &#39;__debug__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__import__&#39;,
+ &#39;__loader__&#39;,
+ &#39;__name__&#39;,
+ &#39;__package__&#39;,
+ &#39;__spec__&#39;,
+ &#39;abs&#39;,
+ &#39;all&#39;,
+ &#39;any&#39;,
+ &#39;ascii&#39;,
+ &#39;bin&#39;,
+ &#39;bool&#39;,
+ &#39;breakpoint&#39;,
+ &#39;bytearray&#39;,
+ &#39;bytes&#39;,
+ &#39;callable&#39;,
+ &#39;chr&#39;,
+ &#39;classmethod&#39;,
+ &#39;compile&#39;,
+ &#39;complex&#39;,
+ &#39;copyright&#39;,
+ &#39;credits&#39;,
+ &#39;delattr&#39;,
+ &#39;dict&#39;,
+ &#39;dir&#39;,
+ &#39;display&#39;,
+ &#39;divmod&#39;,
+ &#39;enumerate&#39;,
+ &#39;eval&#39;,
+ &#39;exec&#39;,
+ &#39;filter&#39;,
+ &#39;float&#39;,
+ &#39;format&#39;,
+ &#39;frozenset&#39;,
+ &#39;get_ipython&#39;,
+ &#39;getattr&#39;,
+ &#39;globals&#39;,
+ &#39;hasattr&#39;,
+ &#39;hash&#39;,
+ &#39;help&#39;,
+ &#39;hex&#39;,
+ &#39;id&#39;,
+ &#39;input&#39;,
+ &#39;int&#39;,
+ &#39;isinstance&#39;,
+ &#39;issubclass&#39;,
+ &#39;iter&#39;,
+ &#39;len&#39;,
+ &#39;license&#39;,
+ &#39;list&#39;,
+ &#39;locals&#39;,
+ &#39;map&#39;,
+ &#39;max&#39;,
+ &#39;memoryview&#39;,
+ &#39;min&#39;,
+ &#39;next&#39;,
+ &#39;object&#39;,
+ &#39;oct&#39;,
+ &#39;open&#39;,
+ &#39;ord&#39;,
+ &#39;pow&#39;,
+ &#39;print&#39;,
+ &#39;property&#39;,
+ &#39;range&#39;,
+ &#39;repr&#39;,
+ &#39;reversed&#39;,
+ &#39;round&#39;,
+ &#39;set&#39;,
+ &#39;setattr&#39;,
+ &#39;slice&#39;,
+ &#39;sorted&#39;,
+ &#39;staticmethod&#39;,
+ &#39;str&#39;,
+ &#39;sum&#39;,
+ &#39;super&#39;,
+ &#39;tuple&#39;,
+ &#39;type&#39;,
+ &#39;vars&#39;,
+ &#39;zip&#39;]</pre>
+</div>
+
+</div>
 
 </div>
 </div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">)</span> <span class="c1"># __builtins__.print</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>hello world
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="o">=</span><span class="s1">&#39;hi&#39;</span> <span class="c1">#print name is overwritten</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-3-668221ca0e01&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-fg">      1</span> print<span class="ansi-yellow-intense-fg ansi-bold">=</span><span class="ansi-blue-intense-fg ansi-bold">&#39;hi&#39;</span> <span class="ansi-red-intense-fg ansi-bold">#print name is overwritten</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 2</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>print<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#39;hi&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+
+<span class="ansi-red-intense-fg ansi-bold">TypeError</span>: &#39;str&#39; object is not callable</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="global-name-is-gone,-but-print-still-exits-in-__builtins__">global name is gone, but print still exits in __builtins__<a class="anchor-link" href="#global-name-is-gone,-but-print-still-exits-in-__builtins__">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="o">=</span><span class="n">__builtins__</span><span class="o">.</span><span class="n">print</span> <span class="c1"># print reference is restored back</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hi&#39;</span><span class="p">)</span> <span class="c1">#we got our print back</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>hi
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
