@@ -13499,6 +13499,647 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2-sys-module">2 sys module<a class="anchor-link" href="#2-sys-module">&#182;</a></h2><ul>
+<li><p>contains important api related to the python system.</p>
+</li>
+<li><p>it can be considered as an extension of <strong>__builtins__</strong></p>
+</li>
+<li><p>it contains more details required by python runtime rather than python language feature</p>
+</li>
+</ul>
+<h3 id="2.1-checking-the-directory-of-sys">2.1 checking the directory of sys<a class="anchor-link" href="#2.1-checking-the-directory-of-sys">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">sys</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-6-cf3a7d5167f3&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>dir<span class="ansi-yellow-intense-fg ansi-bold">(</span>sys<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;sys&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Remeber!!!">Remeber!!!<a class="anchor-link" href="#Remeber!!!">&#182;</a></h3><ul>
+<li><p><strong>sys</strong> object doesn't exist untill you import it</p>
+</li>
+<li><p>only <strong>__builtins__</strong> is imported implicitly</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">sys</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;__breakpointhook__&#39;, &#39;__displayhook__&#39;, &#39;__doc__&#39;, &#39;__excepthook__&#39;, &#39;__interactivehook__&#39;, &#39;__loader__&#39;, &#39;__name__&#39;, &#39;__package__&#39;, &#39;__spec__&#39;, &#39;__stderr__&#39;, &#39;__stdin__&#39;, &#39;__stdout__&#39;, &#39;_clear_type_cache&#39;, &#39;_current_frames&#39;, &#39;_debugmallocstats&#39;, &#39;_enablelegacywindowsfsencoding&#39;, &#39;_framework&#39;, &#39;_getframe&#39;, &#39;_git&#39;, &#39;_home&#39;, &#39;_xoptions&#39;, &#39;api_version&#39;, &#39;argv&#39;, &#39;base_exec_prefix&#39;, &#39;base_prefix&#39;, &#39;breakpointhook&#39;, &#39;builtin_module_names&#39;, &#39;byteorder&#39;, &#39;call_tracing&#39;, &#39;callstats&#39;, &#39;copyright&#39;, &#39;displayhook&#39;, &#39;dllhandle&#39;, &#39;dont_write_bytecode&#39;, &#39;exc_info&#39;, &#39;excepthook&#39;, &#39;exec_prefix&#39;, &#39;executable&#39;, &#39;exit&#39;, &#39;flags&#39;, &#39;float_info&#39;, &#39;float_repr_style&#39;, &#39;get_asyncgen_hooks&#39;, &#39;get_coroutine_origin_tracking_depth&#39;, &#39;get_coroutine_wrapper&#39;, &#39;getallocatedblocks&#39;, &#39;getcheckinterval&#39;, &#39;getdefaultencoding&#39;, &#39;getfilesystemencodeerrors&#39;, &#39;getfilesystemencoding&#39;, &#39;getprofile&#39;, &#39;getrecursionlimit&#39;, &#39;getrefcount&#39;, &#39;getsizeof&#39;, &#39;getswitchinterval&#39;, &#39;gettrace&#39;, &#39;getwindowsversion&#39;, &#39;hash_info&#39;, &#39;hexversion&#39;, &#39;implementation&#39;, &#39;int_info&#39;, &#39;intern&#39;, &#39;is_finalizing&#39;, &#39;last_traceback&#39;, &#39;last_type&#39;, &#39;last_value&#39;, &#39;maxsize&#39;, &#39;maxunicode&#39;, &#39;meta_path&#39;, &#39;modules&#39;, &#39;path&#39;, &#39;path_hooks&#39;, &#39;path_importer_cache&#39;, &#39;platform&#39;, &#39;prefix&#39;, &#39;ps1&#39;, &#39;ps2&#39;, &#39;ps3&#39;, &#39;set_asyncgen_hooks&#39;, &#39;set_coroutine_origin_tracking_depth&#39;, &#39;set_coroutine_wrapper&#39;, &#39;setcheckinterval&#39;, &#39;setprofile&#39;, &#39;setrecursionlimit&#39;, &#39;setswitchinterval&#39;, &#39;settrace&#39;, &#39;stderr&#39;, &#39;stdin&#39;, &#39;stdout&#39;, &#39;thread_info&#39;, &#39;version&#39;, &#39;version_info&#39;, &#39;warnoptions&#39;, &#39;winver&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sys</span><span class="o">.</span><span class="n">version</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;3.7.0 (default, Jun 28 2018, 08:04:48) [MSC v.1912 64 bit (AMD64)]&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="sys.version_info">sys.version_info<a class="anchor-link" href="#sys.version_info">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sys</span><span class="o">.</span><span class="n">version_info</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[11]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>sys.version_info(major=3, minor=7, micro=0, releaselevel=&#39;final&#39;, serial=0)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Aside---named-tuple">Aside - named tuple<a class="anchor-link" href="#Aside---named-tuple">&#182;</a></h3><ul>
+<li>python has a sequence called <strong>named tuple</strong></li>
+<li>here instead of using index to access the element we use names</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">v</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">version_info</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>sys.version_info(major=3, minor=7, micro=0, releaselevel=&#39;final&#39;, serial=0)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">v</span><span class="o">.</span><span class="n">major</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[14]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">v</span><span class="o">.</span><span class="n">minor</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[15]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>7</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">v</span><span class="o">.</span><span class="n">releaselevel</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[16]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;final&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Use-case-for-sys.version_info">Use case for sys.version_info<a class="anchor-link" href="#Use-case-for-sys.version_info">&#182;</a></h3><ul>
+<li>we can use version knowledge to create version independent api or take version dependent action</li>
+</ul>
+<hr>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="o">.</span><span class="n">major</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">:</span>
+    <span class="nb">input</span><span class="o">=</span><span class="nb">raw_input</span>
+    <span class="nb">range</span><span class="o">=</span><span class="nb">xrange</span>
+
+
+<span class="c1"># now input will always return string both in python 2 and python 3</span>
+<span class="c1"># now python 2 codes are also compatible to future version of python 3</span>
+</pre></div>
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="sys.argv">sys.argv<a class="anchor-link" href="#sys.argv">&#182;</a></h3><ul>
+<li>is a list of command line argument</li>
+<li>argument 0 is the name of the script file</li>
+<li>arguments are always string<ul>
+<li>to use them as number you need to convert them</li>
+</ul>
+</li>
+</ul>
+<h3 id="sys.path">sys.path<a class="anchor-link" href="#sys.path">&#182;</a></h3><ul>
+<li><p>it is a list of all the <strong>paths</strong> where a module shall be searched by the <strong>python runtime</strong></p>
+</li>
+<li><p>the paths included are</p>
+<ol>
+<li>current working directory</li>
+<li>script execution directory</li>
+<li>all paths mentioned in <strong>PYTHONPATH</strong></li>
+<li>python system installation directories<ul>
+<li>this is where pythons standard modules are located</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sys</span><span class="o">.</span><span class="n">path</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[2]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;&#39;,
+ &#39;C:\\myworks\\Corporate\\201906-hp-py\\jupyter&#39;,
+ &#39;c:\\pythonlib1&#39;,
+ &#39;c:\\pythonlib2&#39;,
+ &#39;c:\\python\\shared&#39;,
+ &#39;C:\\Users\\vivek\\Anaconda3\\python37.zip&#39;,
+ &#39;C:\\Users\\vivek\\Anaconda3\\DLLs&#39;,
+ &#39;C:\\Users\\vivek\\Anaconda3\\lib&#39;,
+ &#39;C:\\Users\\vivek\\Anaconda3&#39;,
+ &#39;C:\\Users\\vivek\\AppData\\Roaming\\Python\\Python37\\site-packages&#39;,
+ &#39;C:\\Users\\vivek\\Anaconda3\\lib\\site-packages&#39;,
+ &#39;C:\\Users\\vivek\\Anaconda3\\lib\\site-packages\\win32&#39;,
+ &#39;C:\\Users\\vivek\\Anaconda3\\lib\\site-packages\\win32\\lib&#39;,
+ &#39;C:\\Users\\vivek\\Anaconda3\\lib\\site-packages\\Pythonwin&#39;,
+ &#39;C:\\Users\\vivek\\Anaconda3\\lib\\site-packages\\IPython\\extensions&#39;,
+ &#39;C:\\Users\\vivek\\.ipython&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Loading-user-defined-module">Loading user defined module<a class="anchor-link" href="#Loading-user-defined-module">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">conceptarchitect.calculations.primes</span> <span class="k">as</span> <span class="nn">p</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-intense-fg ansi-bold">------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">ModuleNotFoundError</span>              Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-3-271b71d2e759&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span><span class="ansi-yellow-intense-fg ansi-bold"> </span><span class="ansi-green-intense-fg ansi-bold">import</span> conceptarchitect<span class="ansi-yellow-intense-fg ansi-bold">.</span>calculations<span class="ansi-yellow-intense-fg ansi-bold">.</span>primes <span class="ansi-green-intense-fg ansi-bold">as</span> p
+
+<span class="ansi-red-intense-fg ansi-bold">ModuleNotFoundError</span>: No module named &#39;conceptarchitect&#39;</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Problem!!!">Problem!!!<a class="anchor-link" href="#Problem!!!">&#182;</a></h4><ul>
+<li><p>This module is present in path <strong>..\libs</strong></p>
+</li>
+<li><p>This path is not mentioned in <strong>PYTHONPATH</strong></p>
+</li>
+<li><p>Environment variable (includeing <strong>PYTHONPATH</strong>) can't be updated after application is loaded</p>
+</li>
+</ul>
+<h3 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h3><ul>
+<li><strong>sys.path</strong> is a <strong>list</strong></li>
+<li><strong>list</strong> is <strong>mutable</strong></li>
+</ul>
+<h4 id="we-can-add-more-paths-to-sys.path-variable">we can add more paths to sys.path variable<a class="anchor-link" href="#we-can-add-more-paths-to-sys.path-variable">&#182;</a></h4><ul>
+<li>this will add new locations dynamically where python can search for modules</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;../libs&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">conceptarchitect.calculations.primes</span> <span class="k">as</span> <span class="nn">p</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>conceptarchitect.calculations module loaded
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;__builtins__&#39;, &#39;__cached__&#39;, &#39;__doc__&#39;, &#39;__file__&#39;, &#39;__loader__&#39;, &#39;__name__&#39;, &#39;__package__&#39;, &#39;__spec__&#39;, &#39;is_prime&#39;, &#39;prime_range&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">p</span><span class="o">.</span><span class="n">prime_range</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">p</span><span class="o">.</span><span class="n">prime_range</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[53, 59, 61, 67, 71, 73, 79, 83, 89, 97]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>

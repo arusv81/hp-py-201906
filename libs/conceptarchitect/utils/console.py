@@ -1,4 +1,10 @@
 
+import sys
+
+# if you are running python 2, use raw_input instead of input
+if sys.version_info.major<3:
+    input=raw_input  
+
 
 def read_str(prompt,defaultValue=None):
     answer=input(prompt)
@@ -21,7 +27,6 @@ def read_float(prompt,defaultValue=0.0):
         return defaultValue
     else:
         return float(str)
-
 
 def read_bool(prompt,defaultValue=True):
     str=read_str(prompt)
