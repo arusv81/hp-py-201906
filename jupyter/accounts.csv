@@ -1,0 +1,4 @@
+id,name,password,balance,type,active
+1,Vivek Dutta Mishra, p@ss,50000,SavingsAccount,1
+2,Sanjay Mall, p@ss,50000,CurrentAccount,1
+3,Prabhat Singh, p@ss,150000,OverdraftAccount,1
